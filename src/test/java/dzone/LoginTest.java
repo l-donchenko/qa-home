@@ -40,4 +40,5 @@ public class LoginTest {
         login.with("tester", "somepass");
         assertTrue("failed message is not displayed", login.failedMessagePresent());
     }
+
 }
