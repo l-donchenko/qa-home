@@ -29,7 +29,15 @@ public class LoginTest {
 
     @Test
     public void succeeded() {
+        System.out.println("Login with correct credentials");
         login.with("tomsmith", "SuperSecretPassword!");
         assertTrue("success message not present", login.successMessagePresent());
+    }
+
+    @Test
+    public void failed(){
+        System.out.println("Login with wrong credentials");
+        login.with("tester", "somepass");
+        assertTrue("failed message is not displayed", login.failedMessagePresent());
     }
 }

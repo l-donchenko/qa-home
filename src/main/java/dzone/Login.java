@@ -12,6 +12,7 @@ public class Login {
     private By passwordLocator = By.id("password");
     private By submitButton = By.cssSelector("button");
     private By successMessageLocator = By.cssSelector(".flash.success");
+    private By failedMessageLocator = By.cssSelector(".flash.error");
 
     public Login(WebDriver driver) {
         this.driver = driver;
@@ -29,5 +30,6 @@ public class Login {
     public Boolean successMessagePresent() {
         return driver.findElement(successMessageLocator).isDisplayed();
     }
+    public Boolean failedMessagePresent() {return  driver.findElement(failedMessageLocator).isDisplayed();}
 
 }
